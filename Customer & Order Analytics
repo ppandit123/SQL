@@ -1,5 +1,7 @@
-SELECT * FROM BIT_DB.customers LIMIT 5;
-SELECT * FROM BIT_DB.JanSales LIMIT 5;
+--In this SQL, I'm querying a database with multiple tables in it to quantify statistics about customer and order data.
+
+SELECT * FROM BIT_DB.customers LIMIT 10;
+SELECT * FROM BIT_DB.JanSales LIMIT 10;
 SELECT * FROM BIT_DB.FebSales LIMIT 10;
 
 SELECT * FROM customers
