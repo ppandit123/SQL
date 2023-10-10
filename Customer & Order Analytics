@@ -4,9 +4,6 @@ SELECT * FROM BIT_DB.customers LIMIT 10;
 SELECT * FROM BIT_DB.JanSales LIMIT 10;
 SELECT * FROM BIT_DB.FebSales LIMIT 10;
 
-SELECT * FROM customers
-WHERE order_id IS NOT NULL
-AND order_id <> '';
 
 --How many orders were placed in January?
 
