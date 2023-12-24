@@ -1,0 +1,62 @@
+# For this project, I downloaded the Spotify data from Kaggle.
+# Then I created a table to insert Spotify data into it .
+# Finally, I performed analytics on the data using SQL.
+
+#Creating the table: 
+CREATE TABLE BIT_DB.Spotifydata (
+    id              INTEGER        PRIMARY KEY,
+    artist          VARCHAR        NOT NULL,
+    track_name      VARCHAR        NOT NULL,
+    popularity      INTEGER        NOT NULL,
+    danceability    DECIMAL (4, 3) NOT NULL,
+    energy          DECIMAL (4, 3) NOT NULL,
+    song_key        INTEGER        NOT NULL,
+    loudenss        DECIMAL (5, 3) NOT NULL,
+    song_mode       INTEGER        NOT NULL,
+    speechiness     DECIMAL (5, 4) NOT NULL,
+    ascouticness    DECIMAL (6, 5) NOT NULL,
+    instrumetalness DECIMAL (8, 7) NOT NULL,
+    liveness        DECIMAL (5, 4) NOT NULL,
+    valence         DECIMAL (5, 4) NOT NULL,
+    tempo           DECIMAL (6, 3) NOT NULL,
+    duration_ms     INTEGRE        NOT NULL,
+    time_signature  INTEGER        NOT NULL
+);
+
+#Then I inserted the Spotify Data .csv into the table.
+
+#Next, I explored the data using the following SQL. 
+
+#First I determined the avg popularity, danceability,loudness and energy by artist and track. 
+SELECT
+artist_name
+,track_name
+,avg(popularity)
+,avg(danceability)
+,avg(loudness)
+,avg(energy)
+FROM BIT_DB.spotifydata
+GROUP BY artist_name, track_name;
+
+#Then I determined who the Top 10 artists are by popularity
+SELECT track_name, artist_name, popularity
+FROM BIT_DB.spotifydata
+ORDER BY popularity desc
+LIMIT 10;
+
+#Then I found out the which artist released the longest song
+SELECT artist_name, duration_ms
+FROM BIT_DB.Spotifydata
+ORDER BY duration_ms DESC
+LIMIT 1;
+
+#Then I found out the artsist_names which starts with letter o.
+SELECT artist_name
+FROM BIT_DB.Spotifydata
+WHERE artist_name LIKE '0%';
+
+#Then I found out the list of the artist_name order by ascending order
+SELECT artist_name 
+FROM BIT_DB.Spotifydata
+ORDER BY ;
+
